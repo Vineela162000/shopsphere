@@ -1,0 +1,17 @@
+# Build output
+target/
+build/
+
+# Frontend dependencies (later)
+node_modules/
+
+# Secrets (later)
+.env
+
+# Mac and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log
