@@ -1,6 +1,7 @@
 package com.shopsphere.backend.service;
 
 import com.shopsphere.backend.dto.ProductResponse;
+import com.shopsphere.backend.exception.ProductNotFoundException;
 import com.shopsphere.backend.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,11 @@ public class ProductService {
                 .stream()
                 .map(ProductResponse::from)
                 .toList();
+    }
+
+    public ProductResponse getProductById(Long id) {
+        return productRepository.findById(id)
+                .map(ProductResponse::from)
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 }
