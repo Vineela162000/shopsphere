@@ -1,6 +1,6 @@
 package com.shopsphere.backend.controller;
 
-import com.shopsphere.backend.entity.Product;
+import com.shopsphere.backend.dto.ProductResponse;
 import com.shopsphere.backend.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
     }
 }
